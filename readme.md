@@ -7,5 +7,3 @@ It has following features:-
 2) A user can see their existing todo
 3) A user can mark done its todo
 
-//initalize a node project
-//create a package.json file
