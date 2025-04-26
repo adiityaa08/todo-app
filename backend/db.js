@@ -16,7 +16,7 @@ const todoschema=new mongoose.Schema({
     },
     completed:{
         type:Boolean,
-        default:false,
+        default:false, //
     }
 })
 
