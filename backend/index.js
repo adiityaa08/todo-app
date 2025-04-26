@@ -2,8 +2,10 @@ const express=require('express');
 const {todo}=require('./db');
 const { createTodo } = require('./type');
 const app=express();
+const cors=require('cors');
 
 app.use(express.json());
+app.use(cors({})) // this method allows to hit backend from frotnend from any website if u wanna restrict it set origin to your frontend url
 
 app.post("/todo",async(req,res)=>{  //create a new todo
    const createpayload=req.body;
@@ -27,8 +29,8 @@ app.post("/todo",async(req,res)=>{  //create a new todo
 
 app.get("/todos",async(req,res)=>{
     const todos=await todo.find();
-    res.status(200),json({
-        todos:todos,
+    res.status(200).json({
+        todos:[...todos],
         msg:"all todos",
     })
 })
