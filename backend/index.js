@@ -5,7 +5,7 @@ const app=express();
 
 app.use(express.json());
 
-app.post("/todo",async(req,res)=>{
+app.post("/todo",async(req,res)=>{  //create a new todo
    const createpayload=req.body;
    const parsepayload=createTodo.safeParse(createpayload);
    if(!parsepayload.success){
